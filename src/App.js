@@ -20,7 +20,7 @@ function App() {
     const fetchAPI = async () => {
       if (query) {
         const apiKey = "b234cf14d1e1e4bfd82560a37d25401c";
-        const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}`;
         const res = await fetch(url);
         const json = await res.json();
         setResult(json);
@@ -47,7 +47,7 @@ function App() {
 
   return (
     <>
-      <Header titulo="Clima React App" />
+      <Header title="Clima React App" />
       <div className="contenedor-form">
         <div className="container">
           <div className="row">

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import PropTypes from "prop-types";
 
 const Form = ({ data, setData, setQuery }) => {
   const [error, setError] = useState(false);
@@ -68,6 +69,12 @@ const Form = ({ data, setData, setQuery }) => {
       </div>
     </form>
   );
+};
+
+Form.propTypes = {
+  data: PropTypes.object.isRequired,
+  setData: PropTypes.func.isRequired,
+  setQuery: PropTypes.func.isRequired,
 };
 
 export default Form;

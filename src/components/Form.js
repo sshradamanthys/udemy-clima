@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Form = ({ data, setData }) => {
+const Form = ({ data, setData, setQuery }) => {
   const [error, setError] = useState(false);
   const { city, country } = data;
 
@@ -19,11 +19,12 @@ const Form = ({ data, setData }) => {
     }
 
     setError(false);
+    setQuery(true);
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      {error ? <p className="error">Ambos campos son obligatorios</p> : null}
+      {error ? <p>Ambos campos son obligatorios</p> : null}
 
       <div className="input-field col s12">
         <input
